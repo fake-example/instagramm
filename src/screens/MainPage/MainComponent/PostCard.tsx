@@ -3,8 +3,6 @@ import {FiMoreHorizontal} from 'react-icons/fi'
 import {FaRegPaperPlane} from 'react-icons/fa'
 import {AiOutlineHeart,AiFillHeart,AiOutlineSmile} from 'react-icons/ai'
 import {MdOutlineChatBubbleOutline} from 'react-icons/md'
-import moment from 'moment'; 
-import "moment/locale/ko";
 import {firestoreService } from '../../../fbase'
 import {useSelector} from 'react-redux'
 import {RootState} from '../../../redux/_reducers'
@@ -507,7 +505,7 @@ function PostCard({post,allLike,allSavePost}:IProps) {
                                         post?.user.id === currentUser.uid ? <Link to="/myprofile"><span style={{ fontWeight: "bold", color: "black" }}>{post?.user.name}&nbsp;</span></Link>
                                             : <Link to={"/profile/" + post?.user.id}><span style={{ fontWeight: "bold", color: "black" }}>{post?.user.name}&nbsp;</span></Link>
                                     }{post?.description}</div>
-                                    <span style={{ color: "gray", fontSize: "12px" }}>{moment(`${post.yearMonthDay} ${post.hourminutesecond}`).fromNow()}</span>
+
                                 </div>
                             </div> : null
                         }
@@ -538,7 +536,7 @@ function PostCard({post,allLike,allSavePost}:IProps) {
                                 {likeCount}dog</span></div>
                                 : <div style={{ margin: "10px 0 0 16px" }}><span style={{ fontWeight: "bold" }}>great</span>Try pressing</div>
                         }
-                        <div style={{margin:"5px 0 0 16px", fontSize: "10px", color: "gray" }}>{moment(`${post.yearMonthDay} ${post.hourminutesecond}`).fromNow()}</div>
+
                     </div>
                     <footer style={{ margin: "12px 0 0 16px", display: 'flex' }}>
                         <AiOutlineSmile size={27} style={{ marginRight: "13px" }} />
